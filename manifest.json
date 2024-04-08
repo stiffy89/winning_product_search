@@ -1,0 +1,94 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "ns.winning_product_search",
+		"type": "card",
+		"title": "Product Search",
+		"subTitle": "",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://list"
+		}
+	},
+	"sap.card": {
+		"type": "List",
+        "designtime": "dt/configuration",
+		"configuration" : {
+			"filters": {
+				"searchQuery": {
+					"type": "Search",
+					"label": "Search Product",
+					"placeholder": "Enter a product"
+				}
+			}
+		},
+		"header": {
+			"title": "Product Search",
+			"subTitle" : "Click to launch app",
+			"icon": {
+				"src": "sap-icon://desktop-mobile"
+			},
+			"status": {
+				"text": "5 of 20"
+			},
+			"actions" : [
+				{
+					"type" : "Navigation",
+					"parameters" : {
+						"ibnTarget" : {
+							"semanticObject" : "S_EPM_FPM_PO",
+							"action" : "Display"
+						}
+					}
+				}
+			]
+		},
+		"content": {
+			"data": {
+				"json": [{
+						"Name": "Monitor Screen",
+						"Description": "32 GB Digital Assistant with high-resolution color screen",
+						"Img" : "./img/monitor.png"
+					},
+					{
+						"Name": "Hard-Drive",
+						"Description": "Digital Organizer with State-of-the-Art Storage Encryption",
+						"Img" : "./img/harddrive.png"
+					},
+					{
+						"Name": "Notebook Professional 15",
+						"Description": "Notebook Professional 15 with 2,80 GHz quad core, 15\" Multitouch LCD, 8 GB DDR3 RAM, 500 GB SSD - DVD-Writer (DVD-R/+R/-RW/-RAM),Windows 8 Pro",
+						"Img" : "./img/notebook.png"
+					},
+					{
+						"Name": "Monitor Screen",
+						"Description": "Optimum Hi-Resolution max. 1920 x 1080 @ 85Hz, Dot Pitch: 0.27mm",
+						"Img" : "./img/monitor.png"
+					},
+					{
+						"Name": "Laser Printer",
+						"Description": "Print 2400 dpi image quality color documents at speeds of up to 32 ppm (color) or 36 ppm (monochrome), letter/A4. Powerful 500 MHz processor, 512MB of memory",
+						"Img" : "./img/printer.png"
+					}
+				]
+			},
+			"item": {
+				"title": "{Name}",
+				"description": "{Description}",
+				"icon": {
+					"src": "{Img}",
+					"shape": "Square"
+				}
+			}
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
